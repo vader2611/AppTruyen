@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#fff"
+
+
+    tools:context=".ChapActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp">
+        <ImageView
+            android:id="@+id/imgAnhTruyens"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/trutien"
+            android:scaleType="centerCrop"
+            />
+        <TextView
+            android:id="@+id/txvTenTruyens"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#A4000000"
+            android:text="ten truyen"
+            android:gravity="center"
+            android:textColor="#fff"
+            android:textSize="40dp"
+            android:padding="5dp"
+            />
+    </RelativeLayout>
+<ListView
+    android:id="@+id/lsvDanhSachChap"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+</ListView>
+</LinearLayout>
