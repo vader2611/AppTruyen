@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -9,22 +9,17 @@
     <ImageView
         android:id="@+id/imgchao"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="597dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
         android:src="@drawable/manhinhchao" />
 
     <ImageView
         android:id="@+id/welcome"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/welcome" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="250dp"
+        android:layout_alignBottom="@+id/imgchao"
+        android:layout_marginBottom="-39dp"
         app:srcCompat="@drawable/welcome" />
 
 
-</LinearLayout>
+</RelativeLayout>
