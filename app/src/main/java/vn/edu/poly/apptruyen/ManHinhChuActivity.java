@@ -1,7 +1,9 @@
 package vn.edu.poly.apptruyen;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -10,6 +12,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -28,18 +31,50 @@ public class ManHinhChuActivity extends AppCompatActivity implements LayTruyenVe
     TruyenTranhAdapter adapter;
     ArrayList<TruyenTranh> truyenTranhArrayList;
     EditText edtTimKiem;
+    ImageView imgThoat;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_man_hinh_chu);
+
         init();
         anhXa();
         setUp();
         setClick();
         new ApiLayTruyen(this).execute();
     }
+     @Override
+     public void onBackPressed(){
+        AlertDialog.Builder alertDialogBuilder= new AlertDialog.Builder(this);
+        alertDialogBuilder.setTitle("Confirn Exit..!!");
+        alertDialogBuilder.setIcon(R.drawable.nutout);
+        alertDialogBuilder.setMessage("Are you sure You want to exit");
+        alertDialogBuilder.setCancelable(false);
+        alertDialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                finish();
+            }
+        });
+        alertDialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Toast.makeText(ManHinhChuActivity.this,"",Toast.LENGTH_LONG).show();
+            }
+        });
+        AlertDialog alertDialog= alertDialogBuilder.create();
+        alertDialog.show();
+
+
+
+        }
+
+
+
+
     private void init(){
         truyenTranhArrayList= new ArrayList<>();
 
@@ -115,4 +150,5 @@ public class ManHinhChuActivity extends AppCompatActivity implements LayTruyenVe
     public void update(View view) {
         new ApiLayTruyen(this).execute();
     }
+
 }

@@ -19,8 +19,8 @@
             android:layout_alignParentRight="true"
             android:onClick="update"
             android:src="@drawable/update"
-            />
 
+            />
 
         <EditText
             android:id="@+id/edtTimKiem"
